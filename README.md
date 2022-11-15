@@ -9,6 +9,16 @@ However, any interpretation of the problems behind the failures gives rise to di
 Here, we revisit these recent advances, focusing on why the regular training of these methods fails in some benchmark systems. We observed that in some problems, a change in the random initialisation is sufficient to bring the outcome of the network from a complete failure to convergence to the exact solution. On the other hand, some systems instead cannot be solved by the vanilla method at all. Moreover, state-of-the-art improvements that solve some systems' problems fail when applied to others. This sensibly different behaviour reflects how we cannot observe the problems in PINN training from a single perspective.
 Therefore, although many novel strategies give promising benefits to PINN results, our experiments prove that there is no one solution to rule them all. This outcome evidences that PINNs are still not well-suited for real-world or industrial applications, but we are not necessarily far from this goal.
 
+## How to run 
+An experiment can be launched on an available `SYSTEM` with the desired `TRAINING` by running
+```
+python pinn_train.py --system <SYSTEM> --training <TRAINING>
+```
+The default settings are already configured, but some hyperparameters (e.g., epochs, learning rate, etc.) can be customized. More information with
+```
+python pinn_train.py --help
+```
+
 ## Citation
 The paper has been submitted to "Result in Engineering" journal. It is still under revision.
 
