@@ -1,0 +1,58 @@
+convection:
+    name: '♻️  Convection'
+    u0_str: 'sin(x)'
+    xrange: [0., 6.283185307179586]
+    nx: 256
+    nt: 100
+    parameters: 
+        # nu: 0.0
+        # rho: 0.0
+        beta: 30.
+    epochs: 27500
+    epsilon_weight: 0.01
+    curriculum: beta
+    curr_initval: 1.
+    curr_steps: 10
+    curr_epochs: 2500
+reaction-diffusion:
+    name: '⚗️  Reaction-diffusion'
+    u0_str: 'gauss'
+    xrange: [0., 6.283185307179586]
+    nx: 256
+    nt: 100
+    parameters: 
+        nu: 5.0
+        rho: 5.0
+        # beta: 30.
+    epochs: 50000
+    epsilon_weight: 1.
+    curriculum: rho
+    curr_initval: 1.
+    curr_steps: 10
+    curr_epochs: 2500
+burger:
+    name: '🔈  Burger'
+    u0_str: '-sin(pix)'
+    xrange: [-1, 1]
+    nx: 200
+    nt: 200
+    parameters: 
+        nu: 0.01
+    epochs: 2000
+    epsilon_weight: 1.
+    curriculum: nu
+allencahn:
+    name: '🔗  Allen Cahn'
+    u0_str: 'x^2*cos(pix)'
+    xrange: [-1, 1]
+    nx: 512
+    nt: 201
+    parameters: 
+        nu: 0.0001
+        rho: 5.0
+    epochs: 150000
+    epsilon_weight: 100.
+    curriculum: nu
+    curr_initval: 1.
+    curr_steps: 15
+    curr_epochs: 2500
